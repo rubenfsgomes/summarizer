@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizer</title>
+    <style>
+      /* Add custom styles for the spotlight effect */
+      :root {
+        --mouse-x: 50%;
+        --mouse-y: 50%;
+      }
+      .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.3; /* Adjust this value for the desired dimming level */
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950">
+    <div id="modal-root"></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
