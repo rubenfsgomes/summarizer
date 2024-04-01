@@ -3,7 +3,7 @@ import Timeline from "./Timeline";
 
 export default function Introduction() {
   return (
-    <section className="text-slate-200 mb-40">
+    <section className="text-slate-200 mb-8 sm:mb-40 ">
       <p className="mb-4 text-yellow-100">Hi, I'm</p>
       <h2 className="text-4xl text-yellow-200 mb-4">Rúben Gomes.</h2>
       <p className="text-md">
