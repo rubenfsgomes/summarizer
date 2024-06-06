@@ -1,18 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
 
 function App() {
+  const refIntroduction = useRef(null);
+  const refProjects = useRef(null);
+  const refExperience = useRef(null);
+  const contact = useRef(null)
+
+  const handleScrollClick = (section) => {
+    console.log(section)
+    if (section === "projects") {
+      refProjects.current?.scrollIntoView({ behavior: "smooth" })
+    }
+    else if (section === "introduction")
+    {
+      refIntroduction.current?.scrollIntoView({ behavior: "smooth" })
+    }
+    else if (section === "experience")
+    {
+      refExperience.current?.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const mask = document.querySelector('.mask');
       const x = parseInt((e.clientX / window.innerWidth) * 100);
       const y = parseInt((e.clientY / window.innerHeight) * 100);
-      const radius = Math.min(window.innerWidth, window.innerHeight) * 2; // Calculate the radius based on the smaller dimension and increase it
+      const radius = Math.min(window.innerWidth, window.innerHeight) * 2;
       mask.style.setProperty('--mouse-x', `${x}%`);
       mask.style.setProperty('--mouse-y', `${y}%`);
-      mask.style.setProperty('--radius', `${radius}px`); // Set the radius dynamically
+      mask.style.setProperty('--radius', `${radius}px`);
     };
 
     document.addEventListener('pointermove', handleMouseMove);
@@ -24,10 +46,12 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header onClick={handleScrollClick} />
       <main className="lg:mx-80  mt-32 mx-10">
-        <Introduction/>
-        <Projects />
+        <Introduction ref={refIntroduction} />
+        <Experience ref={refExperience} />
+        <Projects ref={refProjects} />
+        <Contact />
       </main>
       <div className="hidden sm:block">
         <div

@@ -5,10 +5,16 @@ export default function Timeline() {
   return (
     <ol className="mt-16 flex flex-col sm:flex-row">
       <TimelineEntry
+        place={"Carlos Amarante Secondary School"}
+        dateInitial={"September 2016"}
+        dateFinal={"June 2019"}
+        description={"Sciences and Technologies"}
+      />
+      <TimelineEntry
         place={"IPCA"}
         dateInitial={"October 2020"}
         dateFinal={"July 2023"}
-        description={"Bachelors Degree in Computer Systems Engineering"}
+        description={"Bachelor's Degree in Computer Systems Engineering"}
       />
       <TimelineEntry
         place={"Uapgo"}
@@ -20,7 +26,7 @@ export default function Timeline() {
         place={"IPCA"}
         dateInitial={"October 2024"}
         dateFinal={"July 2026"}
-        description={"Masters Degree in Computer Systems Engineering"}
+        description={"Master's Degree in Computer Systems Engineering"}
       />
     </ol>
   );
